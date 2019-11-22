@@ -14,19 +14,15 @@ export class AppComponent {
     const browserLang = translate.getBrowserLang();
     translate.use(browserLang.match(/en|ar/) ? browserLang : 'en');
     this.translate.onLangChange.subscribe((event) => {
-      this.lang =event.lang;
+      this.lang = event.lang;
       if (event.lang == 'ar') {
-      this.ltrrtl = 'rtl';
+        this.ltrrtl = 'rtl';
       }
       else {
-      this.ltrrtl = 'ltr';
+        this.ltrrtl = 'ltr';
       }
       document.getElementsByTagName("html")[0].setAttribute('lang', this.lang);
       document.getElementsByTagName("body")[0].setAttribute('dir', this.ltrrtl);
-      });
+    });
   }
-  useLanguage(language: string) {
-    this.translate.use(language);
-  }
-  
 }
