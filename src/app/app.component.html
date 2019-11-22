@@ -1,6 +1,13 @@
+
+<div id="img-container">
+<img src="../assets/logo.png" alt="alfanar logo">
+</div>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>{{ "Home.Company-Name" | translate }}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
 <div>
-  <h2>{{ "HOME.TITLE" | translate }}</h2>
-<P>{{ "HOME.TEXT" | translate }}</P>
-  <button (click)="useLanguage('en')">en</button>
-  <button (click)="useLanguage('ar')">ar</button>
+  <button (click)="useLanguage('en')">English</button>
+  <button (click)="useLanguage('ar')">عربي</button>
 </div>
