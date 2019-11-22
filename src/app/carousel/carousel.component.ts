@@ -7,13 +7,13 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class CarouselComponent implements OnInit {
   slides = [{
-    image: "../assets/images/log.png"
+    image: "../assets/images/1.jpg"
   }, {
-    image: "./assets/images/log.png"
+    image: "../assets/images/2.jpg"
   }, {
-    image: "../assets/images/log.png"
+    image: "../assets/images/3.jpg"
   }, {
-    image: "../assets/images/log.png"
+    image: "../assets/images/4.jpg"
   }
   ];
   constructor(public translate: TranslateService) { }
