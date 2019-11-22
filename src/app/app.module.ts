@@ -8,6 +8,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 @NgModule({
   declarations: [
     AppComponent
@@ -18,6 +20,8 @@ import {MatButtonModule} from '@angular/material/button';
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
+    MatMenuModule,
+    MatButtonToggleModule,
     TranslateModule.forRoot({
         loader: {
             provide: TranslateLoader,

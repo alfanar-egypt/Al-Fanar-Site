@@ -1,5 +1,11 @@
 {
     "Home": {
-      "Company-Name": "مركز الفنار الطبي"
+      "Company-Name": "مركز الفنار الطبي",
+      "Main-Page": "الصفحة الرئيسية",
+      "Our-Products": "منتجاتنا",
+      "About-Us": "نبذة عنا",
+      "Contact-Us": "تواصل معنا",
+      "Contact-Info": "معلومات التواصل",
+      "Contact-Form": "استمارة التواصل"
     }
   }

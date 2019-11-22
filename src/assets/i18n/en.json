@@ -1,5 +1,11 @@
 {
   "Home": {
-    "Company-Name": "Al Fanar Medical Center"
+    "Company-Name": "Al Fanar Medical Center",
+    "Main-Page": "Main Page",
+    "Our-Products": "Our Products",
+    "About-Us": "About Us",
+    "Contact-Us": "Contact Us",
+    "Contact-Info": "Contact Info",
+    "Contact-Form": "Contact Form"
   }
 }
