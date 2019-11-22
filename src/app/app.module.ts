@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
-
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent
@@ -17,6 +17,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     AppRoutingModule,
     HttpClientModule,
     MatToolbarModule,
+    MatButtonModule,
     TranslateModule.forRoot({
         loader: {
             provide: TranslateLoader,
