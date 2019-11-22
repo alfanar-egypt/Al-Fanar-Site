@@ -5,6 +5,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
             useFactory: HttpLoaderFactory,
             deps: [HttpClient]
         }
-    })
+    }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
