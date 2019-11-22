@@ -13,11 +13,21 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { HeaderComponent } from './header/header.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { ProductsComponent } from './products/products.component';
+import { AboutComponent } from './about/about.component';
+import { InfoComponent } from './info/info.component';
+import { FormComponent } from './form/form.component';
+import { MainComponent } from './main/main.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CarouselComponent
+    CarouselComponent,
+    ProductsComponent,
+    AboutComponent,
+    InfoComponent,
+    FormComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

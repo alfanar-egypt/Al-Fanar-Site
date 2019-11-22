@@ -13,15 +13,15 @@
         <mat-toolbar-row>
           <span>{{ "Home.Company-Name" | translate }}</span>
           <div id="nav-links">
-            <a mat-button>{{ "Home.Main-Page" | translate }}</a>
-            <a mat-button>{{ "Home.Our-Products" | translate }}</a>
-            <a mat-button>{{ "Home.About-Us" | translate }}</a>
+            <a mat-button routerLink="/main">{{ "Home.Main-Page" | translate }}</a>
+            <a mat-button routerLink="/products">{{ "Home.Our-Products" | translate }}</a>
+            <a mat-button routerLink="/about">{{ "Home.About-Us" | translate }}</a>
             <a mat-button [matMenuTriggerFor]="menu">{{
               "Home.Contact-Us" | translate
             }}</a>
             <mat-menu #menu="matMenu">
-              <button mat-menu-item>{{ "Home.Contact-Info" | translate }}</button>
-              <button mat-menu-item>{{ "Home.Contact-Form" | translate }}</button>
+              <button mat-menu-item routerLink="/info">{{ "Home.Contact-Info" | translate }}</button>
+              <button mat-menu-item routerLink="/form">{{ "Home.Contact-Form" | translate }}</button>
             </mat-menu>
           </div>
         </mat-toolbar-row>
