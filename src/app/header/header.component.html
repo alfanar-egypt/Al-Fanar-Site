@@ -2,6 +2,12 @@
   <div id="img-container">
     <img src="../assets/images/logo.png" alt="alfanar logo" />
   </div>
+  <div id="icons-container">
+  <a href="#" target="”_blank”"> <fa-icon [icon]="faFacebookSquare" size="2x"></fa-icon></a>
+  <a href="#" target="”_blank”"> <fa-icon [icon]="faLinkedin" size="2x"></fa-icon></a>
+  <a href="#" target="”_blank”"> <fa-icon [icon]="faEnvelopeSquare" size="2x"></fa-icon></a>
+  <a href="#" target="”_blank”"> <fa-icon [icon]="faPhoneSquare" size="2x"></fa-icon></a>
+</div>
 </div>
 <mat-toolbar color="primary">
   <mat-toolbar-row>
@@ -26,13 +32,15 @@
     </div>
     <div id="toggle-container">
       <div>
-      <mat-button-toggle-group>
-        <mat-button-toggle (click)="useLanguage('en')"
-          >English</mat-button-toggle
-        >
-        <mat-button-toggle (click)="useLanguage('ar')">عربي</mat-button-toggle>
-      </mat-button-toggle-group>
-    </div>
+        <mat-button-toggle-group>
+          <mat-button-toggle (click)="useLanguage('en')"
+            >English</mat-button-toggle
+          >
+          <mat-button-toggle (click)="useLanguage('ar')"
+            >عربي</mat-button-toggle
+          >
+        </mat-button-toggle-group>
+      </div>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>

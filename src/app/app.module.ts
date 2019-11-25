@@ -18,6 +18,7 @@ import { AboutComponent } from './about/about.component';
 import { InfoComponent } from './info/info.component';
 import { FormComponent } from './form/form.component';
 import { MainComponent } from './main/main.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { MainComponent } from './main/main.component';
     MatMenuModule,
     MatCarouselModule,
     MatButtonToggleModule,
+    FontAwesomeModule,
     TranslateModule.forRoot({
         loader: {
             provide: TranslateLoader,
