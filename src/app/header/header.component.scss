@@ -4,8 +4,8 @@ img {
   #img-container {
     display: flex;
     flex-direction: row;
-    align-items: start;
-    justify-content: start;
+    align-items: flex-start;
+    justify-content: flex-start;
     width: 50%;
   }
   span, a {
@@ -23,7 +23,7 @@ img {
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: start;
+      justify-content: flex-start;
       width: 100%;
   }
   #container {
