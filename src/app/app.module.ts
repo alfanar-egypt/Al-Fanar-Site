@@ -5,6 +5,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
@@ -19,6 +21,7 @@ import { InfoComponent } from './info/info.component';
 import { FormComponent } from './form/form.component';
 import { MainComponent } from './main/main.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,8 +37,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MatInputModule,
     MatToolbarModule,
     MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatMenuModule,
     MatCarouselModule,
     MatButtonToggleModule,

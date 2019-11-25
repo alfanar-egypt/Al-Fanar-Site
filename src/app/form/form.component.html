@@ -1,1 +1,71 @@
-<p>form works!</p>
+<form netlify method="POST" hidden name="Contact-Form" action="/" [formGroup]="contactForm" (ngSubmit)="submitForm()">
+  <input type="hidden" name="form-name" value="Contact-Form"/>
+  <mat-form-field>
+    <input
+      matInput
+      name="Name"
+      type="text"
+      placeholder="{{ 'Home.Name' | translate }}"
+      [formControl]="nameFormControl"
+      [errorStateMatcher]="matcher"
+    />
+    <mat-error
+      *ngIf="
+        nameFormControl.hasError('pattern') &&
+        !nameFormControl.hasError('required')
+      "
+    >
+      Please enter a valid name
+    </mat-error>
+    <mat-error *ngIf="phoneNumberFormControl.hasError('required')">
+      Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      name="Email"
+      type="email"
+      placeholder="{{ 'Home.Email' | translate }}"
+      [formControl]="emailFormControl"
+      [errorStateMatcher]="matcher"
+    />
+    <mat-error *ngIf="emailFormControl.hasError('email')">
+      Please enter a valid email address
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      name="Phone-Number"
+      type="text"
+      placeholder="{{ 'Home.Phone-Number' | translate }}"
+      [formControl]="phoneNumberFormControl"
+      [errorStateMatcher]="matcher"
+    />
+    <mat-error
+      *ngIf="
+        phoneNumberFormControl.hasError('pattern') &&
+        !phoneNumberFormControl.hasError('required')
+      "
+    >
+      Please enter a valid phone number
+    </mat-error>
+    <mat-error *ngIf="phoneNumberFormControl.hasError('required')">
+      Phone Number is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea
+      matInput
+      name="Comments"
+      type="text"
+      [formControl]="commentsFormControl"
+      placeholder="{{ 'Home.Comments' | translate }}"
+      [errorStateMatcher]="matcher"
+    ></textarea>
+  </mat-form-field>
+  <button mat-stroked-button color="primary" name="submit" type="submit">
+    {{ "Home.Submit" | translate }}
+  </button>
+</form>

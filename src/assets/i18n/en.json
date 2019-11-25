@@ -12,6 +12,11 @@
     "H13": "3",
     "H14": "4",
     "Our-Location": "Our Address",
-    "Address": "29 el mostashfa el italy st.، EL HADARA، Moharam Bek, Alexandria Governorate"
+    "Address": "29 el mostashfa el italy st.، EL HADARA، Moharam Bek, Alexandria Governorate",
+    "Name": "Name",
+    "Email": "Email",
+    "Phone-Number": "Phone Number",
+    "Comments": "Comments",
+    "Submit": "Submit"
   }
 }
