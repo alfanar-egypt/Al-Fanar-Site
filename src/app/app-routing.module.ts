@@ -7,8 +7,7 @@ import { InfoComponent } from './info/info.component';
 import { FormComponent } from './form/form.component';
 
 const routes: Routes = [
-  { path: 'main', component: MainComponent },
-  { path: '', redirectTo: '/main', pathMatch: 'full' },
+  { path: '', component: MainComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'info', component: InfoComponent },
