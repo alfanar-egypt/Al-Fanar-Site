@@ -1,58 +1,62 @@
 img {
-    height: 100px;
+  height: 100px;
+}
+#img-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 50%;
+}
+span,
+a {
+  font-family: "Cairo", sans-serif;
+  color: white;
+  margin: 5px;
+}
+button {
+  margin: 0, 5px;
+}
+mat-toolbar { 
+     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  z-index: 10;
+  position: relative;
+}
+mat-toolbar-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+#container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#toggle-container {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+fa-icon {
+  color: #4caf50;
+  margin: 10px;
+  display: block;
+}
+fa-icon:hover {
+  transform: scale(1.1);
+  transition: 0.5sec;
+}
+#icons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 50%;
+  a {
+    display: block;
   }
-  #img-container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 50%;
-  }
-  span, a {
-      font-family: 'Cairo', sans-serif;
-      color:white;
-      margin: 5px;
-  }
-  button {
-      margin: 0, 5px;
-  }
-  mat-toolbar {
-      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  }
-  mat-toolbar-row {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      width: 100%;
-  }
-  #container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-  }
-  #toggle-container {
-      width: 60%;
-      display: flex;
-      flex-direction: row;
-      align-items: flex-end;
-      justify-content: flex-end;
-  }
-  fa-icon {
-      color: #4caf50;
-      margin: 10px;
-      display: block;
-  }
-  fa-icon:hover {
-      transform: scale(1.1);
-      transition: 0.5sec;
-  }
-  #icons-container {      display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: flex-end;
-    width: 50%;
-    a {
-        display:block;
-    }
-  }
+}
