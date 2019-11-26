@@ -3,18 +3,16 @@ form {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin: 5%;
+  margin: 1%;
 }
 mat-form-field {
-width: 50%;
-height: 80px;
-}
-textarea {
-    height: 100px;
-    margin: 1px;
+  width: 50%;
+  margin: 1%;
 }
 button {
-    font-size: large;
-    margin:100px 0;
-
+  font-size: large;
+  margin: 1%;
+}
+div {
+  margin: 2%;
 }
