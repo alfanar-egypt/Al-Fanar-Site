@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   margin: 20px;
-  font-family: "Amiri", serif;
+  font-family: "Cairo", sans-serif;
 }
 .img-hover-zoom {
   overflow: hidden;
@@ -15,6 +15,7 @@
   transition: transform .5s ease;
   width:100%;
   height: 100%;
+  margin-bottom: 50px;
 }
 .img-hover-zoom:hover img {
   transform: scale(1.1);
