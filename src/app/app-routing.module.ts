@@ -14,7 +14,9 @@ const routes: Routes = [
   { path: 'form', component: FormComponent },
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports:  [RouterModule.forRoot(routes,{
+    scrollPositionRestoration: 'enabled'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

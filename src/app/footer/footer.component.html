@@ -1,1 +1,21 @@
-<p>footer works!</p>
+<div id="container">
+  <div id="siteMap">
+    <h2>
+      {{ "Home.Site-Map" | translate}}
+    </h2>
+    <a routerLink="/">{{ "Home.Main-Page" | translate }}</a>
+    <a routerLink="/products">{{ "Home.Our-Products" | translate }}</a>
+    <a routerLink="/about">{{ "Home.About-Us" | translate }}</a>
+    <a routerLink="/info">
+      {{ "Home.Contact-Info" | translate }}
+    </a>
+    <a routerLink="/form">
+      {{ "Home.Contact-Form" | translate }}
+    </a>
+  </div>
+  <div id="divContainer">
+    <div>034253062</div>
+    <div>&copy; {{ "Home.Copy" | translate }}</div>
+    <div>{{ "Home.Develop" | translate }}</div>
+  </div>
+</div>
