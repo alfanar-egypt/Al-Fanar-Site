@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators, FormGroup} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import { HttpParams } from '@angular/common/http';
-import { of } from 'rxjs';
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -25,11 +23,11 @@ export class FormComponent implements OnInit {
   ]);
   nameFormControl = new FormControl('', [
     Validators.required,
-    Validators.pattern('[a-zA-Z ]*'),
+    Validators.pattern('[a-zA-Z\u0621-\u064A ]*$'),
   ]);
   phoneNumberFormControl = new FormControl ('', [
     Validators.required,
-    Validators.pattern('[0-9]*'),
+    Validators.pattern('[0-9\u0660-\u0669]*$'),
   ])
   commentsFormControl = new FormControl ('',[])
   matcher = new MyErrorStateMatcher();

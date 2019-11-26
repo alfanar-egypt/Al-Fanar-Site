@@ -1,6 +1,14 @@
 <div>{{ "Home.Form-Message" | translate }}</div>
-<form netlify method="POST" hidden name="Contact-Form" action="/" [formGroup]="contactForm" (ngSubmit)="submitForm()">
-  <input type="hidden" name="form-name" value="Contact-Form"/>
+<form
+  netlify
+  method="POST"
+  hidden
+  name="Contact-Form"
+  action="/"
+  [formGroup]="contactForm"
+  (ngSubmit)="submitForm()"
+>
+  <input type="hidden" name="form-name" value="Contact-Form" />
   <mat-form-field>
     <input
       matInput
@@ -16,10 +24,11 @@
         !nameFormControl.hasError('required')
       "
     >
-      Please enter a valid name
+      {{ "Home.Valid-Name" | translate }}
     </mat-error>
-    <mat-error *ngIf="phoneNumberFormControl.hasError('required')">
-      Name is <strong>required</strong>
+    <mat-error *ngIf="phoneNumberFormControl.hasError('required') && !nameFormControl.hasError('pattern')">
+      {{ "Home.Name-is" | translate }}
+      <strong>{{ "Home.Required" | translate }}</strong>
     </mat-error>
   </mat-form-field>
   <mat-form-field>
@@ -32,7 +41,7 @@
       [errorStateMatcher]="matcher"
     />
     <mat-error *ngIf="emailFormControl.hasError('email')">
-      Please enter a valid email address
+      {{ "Home.Valid-Email" | translate }}
     </mat-error>
   </mat-form-field>
   <mat-form-field>
@@ -50,10 +59,11 @@
         !phoneNumberFormControl.hasError('required')
       "
     >
-      Please enter a valid phone number
+      {{ "Home.Valid-Phone" | translate }}
     </mat-error>
-    <mat-error *ngIf="phoneNumberFormControl.hasError('required')">
-      Phone Number is <strong>required</strong>
+    <mat-error *ngIf="phoneNumberFormControl.hasError('required') && !phoneNumberFormControl.hasError('pattern')">
+      {{ "Home.Phone-Number-is" | translate }}
+      <strong>{{ "Home.Required" | translate }}</strong>
     </mat-error>
   </mat-form-field>
   <mat-form-field>
