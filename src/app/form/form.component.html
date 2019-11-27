@@ -43,6 +43,10 @@
     <mat-error *ngIf="emailFormControl.hasError('email')">
       {{ "Home.Valid-Email" | translate }}
     </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      {{ "Home.Email-is" | translate }}
+      <strong>{{ "Home.Required" | translate }}</strong>
+    </mat-error>
   </mat-form-field>
   <mat-form-field>
     <input
@@ -75,6 +79,16 @@
       placeholder="{{ 'Home.Comments' | translate }}"
       [errorStateMatcher]="matcher"
     ></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      name="Verification"
+      type="text"
+      placeholder="{{ 'Home.Verification' | translate }}: {{ ranNum }}"
+      [(ngModel)]="userInput"
+      [ngModelOptions]="{standalone: true}"
+    />
   </mat-form-field>
   <button mat-stroked-button color="primary" name="submit" type="submit">
     {{ "Home.Submit" | translate }}

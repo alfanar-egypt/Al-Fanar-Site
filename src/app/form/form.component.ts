@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroupDirective, NgForm, Validators, FormGroup} from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
+import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
 import { HttpParams } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 
@@ -18,34 +18,59 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class FormComponent implements OnInit {
   constructor(private http: HttpClient) { }
-  emailFormControl = new FormControl('', [   
+  ranNum = Math.floor((Math.random() * 100) + 1);
+  userInput;
+  emailFormControl = new FormControl('', [
     Validators.email,
+    Validators.required,
   ]);
   nameFormControl = new FormControl('', [
     Validators.required,
     Validators.pattern('[a-zA-Z\u0621-\u064A ]*$'),
   ]);
-  phoneNumberFormControl = new FormControl ('', [
+  phoneNumberFormControl = new FormControl('', [
     Validators.required,
     Validators.pattern('[0-9\u0660-\u0669]*$'),
   ])
-  commentsFormControl = new FormControl ('',[])
+  commentsFormControl = new FormControl('', [])
   matcher = new MyErrorStateMatcher();
 
   contactForm = new FormGroup({
-    Name: this.nameFormControl, Email:this.emailFormControl, "Phone-Number": this.phoneNumberFormControl, Comments: this.commentsFormControl
+    Name: this.nameFormControl, Email: this.emailFormControl, "Phone-Number": this.phoneNumberFormControl, Comments: this.commentsFormControl
   });
   submitForm() {
-  const body = new HttpParams()
-  .set('form-name', 'Contact-Form')
-    .append('Name', this.contactForm.value.Name)
-    .append('Email', this.contactForm.value.Email)
-    .append('Phone-Number', this.contactForm.value["Phone-Number"])
-    .append('Comments', this.contactForm.value.Comments)
-    this.http.post('/', body.toString(), {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }}).subscribe(    res => {}
-    );}
-
- 
+    if (this.ranNum == Number(this.userInput)) {
+      if (this.nameFormControl.errors === null && this.emailFormControl.errors === null && this.phoneNumberFormControl.errors === null) {
+        const body = new HttpParams()
+          .set('form-name', 'Contact-Form')
+          .append('Name', this.contactForm.value.Name)
+          .append('Email', this.contactForm.value.Email)
+          .append('Phone-Number', this.contactForm.value["Phone-Number"])
+          .append('Comments', this.contactForm.value.Comments)
+        this.http.post('/', body.toString(), { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).subscribe(res => { });
+        if (document.getElementsByTagName("html")[0].getAttribute('lang') === "ar") {
+          alert("لقد تم ارسال الاستمارة بنجاح");
+        }
+        else {
+          alert("your form has been submitted successfully");
+        }
+      } else {
+        if (document.getElementsByTagName("html")[0].getAttribute('lang') === "ar") {
+          alert("الرجاء التاكد من ملء الخانات المطلوبة بشكل صحيح");
+        }
+        else {
+          alert("please make sure that you have filled the required fields correctly");
+        }
+      }
+    } else {
+      if (document.getElementsByTagName("html")[0].getAttribute('lang') === "ar") {
+        alert("الرجاء ادخال الرقم الظاهر بشكل صحيح");
+      }
+      else {
+        alert("please enter the provided number correctly");
+      }
+    }
+  }
 
   ngOnInit() {
   }
