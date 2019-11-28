@@ -26,7 +26,12 @@
     >
       {{ "Home.Valid-Name" | translate }}
     </mat-error>
-    <mat-error *ngIf="phoneNumberFormControl.hasError('required') && !nameFormControl.hasError('pattern')">
+    <mat-error
+      *ngIf="
+        phoneNumberFormControl.hasError('required') &&
+        !nameFormControl.hasError('pattern')
+      "
+    >
       {{ "Home.Name-is" | translate }}
       <strong>{{ "Home.Required" | translate }}</strong>
     </mat-error>
@@ -65,7 +70,12 @@
     >
       {{ "Home.Valid-Phone" | translate }}
     </mat-error>
-    <mat-error *ngIf="phoneNumberFormControl.hasError('required') && !phoneNumberFormControl.hasError('pattern')">
+    <mat-error
+      *ngIf="
+        phoneNumberFormControl.hasError('required') &&
+        !phoneNumberFormControl.hasError('pattern')
+      "
+    >
       {{ "Home.Phone-Number-is" | translate }}
       <strong>{{ "Home.Required" | translate }}</strong>
     </mat-error>
@@ -87,10 +97,15 @@
       type="text"
       placeholder="{{ 'Home.Verification' | translate }}: {{ ranNum }}"
       [(ngModel)]="userInput"
-      [ngModelOptions]="{standalone: true}"
+      [ngModelOptions]="{ standalone: true }"
     />
   </mat-form-field>
-  <button mat-stroked-button color="primary" name="submit" type="submit">
+  <button
+    mat-raised-button
+    color="primary"
+    name="submit"
+    type="submit"
+  >
     {{ "Home.Submit" | translate }}
   </button>
 </form>

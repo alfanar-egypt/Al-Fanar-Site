@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { HttpParams } from '@angular/common/http';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { async } from 'q';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -10,14 +11,15 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
-
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private _snackBar: MatSnackBar) { }
+  message: string;
+  action: string = "X";
   ranNum = Math.floor((Math.random() * 100) + 1);
   userInput;
   emailFormControl = new FormControl('', [
@@ -49,29 +51,39 @@ export class FormComponent implements OnInit {
           .append('Comments', this.contactForm.value.Comments)
         this.http.post('/', body.toString(), { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).subscribe(res => { });
         if (document.getElementsByTagName("html")[0].getAttribute('lang') === "ar") {
-          alert("لقد تم ارسال الاستمارة بنجاح");
+          this.message = "لقد تم ارسال الاستمارة بنجاح";
+          this.openSnackBar(this.message, this.action);
         }
         else {
-          alert("your form has been submitted successfully");
+          this.message = "your form has been submitted successfully";
+          this.openSnackBar(this.message, this.action);
         }
       } else {
         if (document.getElementsByTagName("html")[0].getAttribute('lang') === "ar") {
-          alert("الرجاء التاكد من ملء الخانات المطلوبة بشكل صحيح");
+          this.message = "الرجاء التاكد من ملء الخانات المطلوبة بشكل صحيح";
+          this.openSnackBar(this.message, this.action);
         }
         else {
-          alert("please make sure that you have filled the required fields correctly");
+          this.message = "please make sure that you have filled the required fields correctly";
+          this.openSnackBar(this.message, this.action);
         }
       }
     } else {
       if (document.getElementsByTagName("html")[0].getAttribute('lang') === "ar") {
-        alert("الرجاء ادخال الرقم الظاهر بشكل صحيح");
+        this.message = "الرجاء ادخال الرقم الظاهر بشكل صحيح";
+        this.openSnackBar(this.message, this.action);
       }
       else {
-        alert("please enter the provided number correctly");
+        this.message = "please enter the provided number correctly";
+        this.openSnackBar(this.message, this.action);
       }
     }
   }
-
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 2000,
+    });
+  }
   ngOnInit() {
   }
 
