@@ -31,6 +31,7 @@
     "Valid-Email": "Please enter a valid email address",
     "Valid-Phone": "Please enter a valid phone number",
     "Verification": "Please enter the number",
-    "Verification2": "Entering the provided number is "
+    "Verification2": "Entering the provided number is ",
+    "Verification3": "Please enter the provided number correctly"
   }
 }

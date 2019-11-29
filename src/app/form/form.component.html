@@ -4,7 +4,6 @@
   method="POST"
   hidden
   name="Contact-Form"
-  action="/"
   [formGroup]="contactForm"
   (ngSubmit)="submitForm()"
 >
@@ -18,20 +17,10 @@
       [formControl]="nameFormControl"
       [errorStateMatcher]="matcher"
     />
-    <mat-error
-      *ngIf="
-        nameFormControl.hasError('pattern') &&
-        !nameFormControl.hasError('required')
-      "
-    >
+    <mat-error *ngIf="nameFormControl.hasError('pattern')">
       {{ "Home.Valid-Name" | translate }}
     </mat-error>
-    <mat-error
-      *ngIf="
-        phoneNumberFormControl.hasError('required') &&
-        !nameFormControl.hasError('pattern')
-      "
-    >
+    <mat-error *ngIf="phoneNumberFormControl.hasError('required')">
       {{ "Home.Name-is" | translate }}
       <strong>{{ "Home.Required" | translate }}</strong>
     </mat-error>
@@ -62,20 +51,10 @@
       [formControl]="phoneNumberFormControl"
       [errorStateMatcher]="matcher"
     />
-    <mat-error
-      *ngIf="
-        phoneNumberFormControl.hasError('pattern') &&
-        !phoneNumberFormControl.hasError('required')
-      "
-    >
+    <mat-error *ngIf="phoneNumberFormControl.hasError('pattern')">
       {{ "Home.Valid-Phone" | translate }}
     </mat-error>
-    <mat-error
-      *ngIf="
-        phoneNumberFormControl.hasError('required') &&
-        !phoneNumberFormControl.hasError('pattern')
-      "
-    >
+    <mat-error *ngIf="phoneNumberFormControl.hasError('required')">
       {{ "Home.Phone-Number-is" | translate }}
       <strong>{{ "Home.Required" | translate }}</strong>
     </mat-error>
@@ -96,25 +75,18 @@
       name="Verification"
       type="text"
       placeholder="{{ 'Home.Verification' | translate }}: {{ ranNum }}"
-      [(ngModel)]="userInput"
       [formControl]="verificationFormControl"
       [errorStateMatcher]="matcher"
     />
-    <mat-error
-      *ngIf="
-        phoneNumberFormControl.hasError('required')
-      "
-    >
+    <mat-error *ngIf="verificationFormControl.hasError('required')">
       {{ "Home.Verification2" | translate }}
       <strong>{{ "Home.Required" | translate }}</strong>
     </mat-error>
+    <mat-error *ngIf="verificationFormControl.errors && !verificationFormControl.hasError('required')">
+      {{ "Home.Verification3" | translate }}
+    </mat-error>
   </mat-form-field>
-  <button
-    mat-raised-button
-    color="primary"
-    name="submit"
-    type="submit"
-  >
+  <button mat-raised-button color="primary" name="submit" type="submit">
     {{ "Home.Submit" | translate }}
   </button>
 </form>

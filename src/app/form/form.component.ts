@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup } from '@angular/forms';
+import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup, ValidatorFn, AbstractControl } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { async } from 'q';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -21,7 +20,7 @@ export class FormComponent implements OnInit {
   message: string;
   action: string = "X";
   ranNum = Math.floor((Math.random() * 100) + 1);
-  userInput;
+  userInput: String;
   emailFormControl = new FormControl('', [
     Validators.email,
     Validators.required,
@@ -36,14 +35,15 @@ export class FormComponent implements OnInit {
   ])
   commentsFormControl = new FormControl('', [])
   verificationFormControl = new FormControl('', [
-    Validators.required])
+    Validators.required,
+    this.NumberValidator(this.userInput)])
   matcher = new MyErrorStateMatcher();
 
   contactForm = new FormGroup({
     Name: this.nameFormControl, Email: this.emailFormControl, "Phone-Number": this.phoneNumberFormControl, Comments: this.commentsFormControl
   });
   submitForm() {
-    if (this.ranNum == Number(this.userInput)) {
+    if (this.verificationFormControl.errors === null) {
       if (this.nameFormControl.errors === null && this.emailFormControl.errors === null && this.phoneNumberFormControl.errors === null) {
         const body = new HttpParams()
           .set('form-name', 'Contact-Form')
@@ -76,7 +76,7 @@ export class FormComponent implements OnInit {
         this.openSnackBar(this.message, this.action);
       }
       else {
-        this.message = "please enter the provided number correctly";
+        this.message = "Please enter the provided number correctly";
         this.openSnackBar(this.message, this.action);
       }
     }
@@ -88,5 +88,13 @@ export class FormComponent implements OnInit {
   }
   ngOnInit() {
   }
-
+  NumberValidator(x: String): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      if (control.value !== String(this.ranNum)) {
+        return { 'Number': { value: control.value } }
+      } else {
+        return null;
+      }
+    };
+  }
 }
