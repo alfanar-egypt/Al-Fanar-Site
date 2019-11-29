@@ -12,18 +12,33 @@ img {
   margin: 0 10%;
 }
 span {
-  color:red;
+  color: red;
   -webkit-animation: flash linear 1s infinite;
   animation: flash linear 1s infinite;
   font-size: small;
 }
 @-webkit-keyframes flash {
-	0% { opacity: 1; } 
-	50% { opacity: .1; } 
-	100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @keyframes flash {
-	0% { opacity: 1; } 
-	50% { opacity: .1; } 
-	100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+button {
+  color: white !important;
 }

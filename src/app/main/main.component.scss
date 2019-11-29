@@ -1,17 +1,20 @@
 mat-card {
-    margin: 10%;
+  margin: 10%;
 }
 img {
-    background-size: cover;
-  }
-  #container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(350px, 1fr));
-    width: 80%;
-    margin: 0 10%;
-  }
-  h2 {
-      text-align:center;
-      margin: 10%;
-  }
+  background-size: cover;
+}
+#container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(350px, 1fr));
+  width: 80%;
+  margin: 0 10%;
+}
+h2 {
+  text-align: center;
+  margin: 10%;
+}
+button {
+  color: white !important;
+}
