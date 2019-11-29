@@ -1,5 +1,5 @@
 <app-carousel></app-carousel>
-<h2>Our Featured Products:</h2>
+<h2>{{ "Home.Featured-Products" | translate }}</h2>
 <div id="container">
   <ng-container *ngFor="let Product of Products">
       <mat-card *ngIf="Product.featured === 'yes'">
