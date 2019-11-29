@@ -23,6 +23,7 @@ import { FormComponent } from './form/form.component';
 import { MainComponent } from './main/main.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './footer/footer.component';
+import { ProductsService } from './products.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,7 @@ import { FooterComponent } from './footer/footer.component';
     }),
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
