@@ -97,8 +97,17 @@
       type="text"
       placeholder="{{ 'Home.Verification' | translate }}: {{ ranNum }}"
       [(ngModel)]="userInput"
-      [ngModelOptions]="{ standalone: true }"
+      [formControl]="verificationFormControl"
+      [errorStateMatcher]="matcher"
     />
+    <mat-error
+      *ngIf="
+        phoneNumberFormControl.hasError('required')
+      "
+    >
+      {{ "Home.Verification2" | translate }}
+      <strong>{{ "Home.Required" | translate }}</strong>
+    </mat-error>
   </mat-form-field>
   <button
     mat-raised-button

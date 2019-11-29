@@ -35,6 +35,8 @@ export class FormComponent implements OnInit {
     Validators.pattern('[0-9\u0660-\u0669]*$'),
   ])
   commentsFormControl = new FormControl('', [])
+  verificationFormControl = new FormControl('', [
+    Validators.required])
   matcher = new MyErrorStateMatcher();
 
   contactForm = new FormGroup({
