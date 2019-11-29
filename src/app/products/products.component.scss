@@ -1,0 +1,13 @@
+mat-card {
+    margin: 10%;
+}
+img {
+    background-size: cover;
+  }
+  #container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+    width: 80%;
+    margin: 0 10%;
+  }
