@@ -7,7 +7,7 @@ import { ProductsService } from '../products.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  Products: { Name: string; Brand: string; Images: string[]; description: string; featured: string; "Technical-Specifications": { Size: string; Pressure: string; }; }[]
+  Products
 
   constructor(private productsService: ProductsService) { }
   getProducts(): void {

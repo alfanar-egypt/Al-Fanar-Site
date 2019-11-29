@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { MainComponent } from './main/main.component';
 import { InfoComponent } from './info/info.component';
 import { FormComponent } from './form/form.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'info', component: InfoComponent },
   { path: 'form', component: FormComponent },
+  { path: 'detail/:Name', component: ProductDetailsComponent },
 ];
 @NgModule({
   imports:  [RouterModule.forRoot(routes,{

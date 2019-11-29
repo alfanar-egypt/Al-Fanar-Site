@@ -1,1 +1,37 @@
-<p>product-details works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ Product.Name }}</mat-card-title>
+    <mat-card-subtitle>{{ Product.Brand }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-carousel
+    mat-card-image
+    timings="250ms ease-in"
+    [autoplay]="true"
+    interval="5000"
+    color="accent"
+    proportion="100"
+    slides="5"
+    [loop]="true"
+    [hideArrows]="true"
+    [hideIndicators]="true"
+    [useKeyboard]="true"
+    [useMouseWheel]="false"
+    orientation="ltr"
+  >
+    <mat-carousel-slide
+      #matCarouselSlide
+      *ngFor="let x of Product.Images"
+      [image]="x"
+      overlayColor="#00000040"
+      [hideOverlay]="false"
+    ></mat-carousel-slide>
+  </mat-carousel>
+  <mat-card-content
+    ><p>
+      {{ Product.description }}
+    </p>
+    <ul *ngIf="Product['Technical-Specifications']">
+      <li *ngFor="let x of Product['Technical-Specifications']">{{ x }}</li>
+    </ul>
+  </mat-card-content>
+</mat-card>
