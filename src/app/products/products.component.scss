@@ -1,13 +1,29 @@
 mat-card {
-    margin: 10%;
+  margin: 10%;
 }
 img {
-    background-size: cover;
-  }
-  #container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
-    width: 80%;
-    margin: 0 10%;
-  }
+  background-size: cover;
+}
+#container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+  width: 80%;
+  margin: 0 10%;
+}
+span {
+  color:red;
+  -webkit-animation: flash linear 1s infinite;
+  animation: flash linear 1s infinite;
+  font-size: small;
+}
+@-webkit-keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }
+}
+@keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }
+}
