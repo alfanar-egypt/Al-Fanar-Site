@@ -67,6 +67,13 @@ button {
 }
 mat-button-toggle  {
   font-size: 8px;
+  background-color: #4caf50;
+  color: white !important;
+  border-color: #4caf50 !important;
+}
+mat-button-toggle-group {
+  border-color: #4caf50;
+
 }
 #toggle-container {
   display: flex;
