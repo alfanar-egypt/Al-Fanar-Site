@@ -18,7 +18,7 @@ span {
   color: white;
 }
 a {
-  font-size: small;
+  font-size: 9px;
   padding: 0 2.5%;
   font-family: "Cairo", sans-serif;
   color: white;
@@ -26,12 +26,6 @@ a {
 mat-toolbar-row {
   padding: 0;
   width: 100%;
-}
-#toggle-container {
-  position: absolute;
-  right: 0;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  top: 100%;
 }
 #container {
   display: flex;
@@ -72,18 +66,22 @@ button {
   font-family: "Cairo", sans-serif;
 }
 mat-button-toggle  {
-  font-size: small;
+  font-size: 9px;
 }
-@media (min-width: 411px) {
+@media (min-width: 375px) {
   #toggle-container {
-    position: initial;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     justify-content: flex-end;
     width: 100%;
-    margin: 10px;
     box-shadow: none;
+  }
+  a {
+    font-size: small;
+  }
+  mat-button-toggle  {
+    font-size: small;
   }
 }
 @media (min-width: 768px) {
