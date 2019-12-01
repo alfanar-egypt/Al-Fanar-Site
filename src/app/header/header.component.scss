@@ -71,6 +71,9 @@ fa-icon:hover {
 button {
   font-family: "Cairo", sans-serif;
 }
+mat-button-toggle  {
+  font-size: small;
+}
 @media (min-width: 411px) {
   #toggle-container {
     position: initial;
@@ -89,6 +92,9 @@ button {
     margin: 10px;
   }
   a {
+    font-size: medium;
+  }
+  mat-button-toggle  {
     font-size: medium;
   }
 }
