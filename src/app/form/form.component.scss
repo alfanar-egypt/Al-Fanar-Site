@@ -6,7 +6,7 @@ form {
   margin: 1%;
 }
 mat-form-field {
-  width: 50%;
+  width: 70%;
   margin: 1%;
   font-family: "Amiri", serif;
 }
@@ -16,6 +16,16 @@ button {
   font-family: "Amiri", serif;
 }
 div {
-  margin: 2%;
+  margin: 20% 3% 3% 3%;
   font-family: "Amiri", serif;
+}
+@media (min-width: 411px) {
+  div {
+    margin: 3%;
+  }
+}
+@media (min-width: 768px) {
+  mat-form-field {
+    width: 50%;
+  }
 }
