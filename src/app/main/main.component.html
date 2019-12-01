@@ -1,19 +1,25 @@
-<app-carousel></app-carousel>
-<h2>{{ "Home.Featured-Products" | translate }}</h2>
-<div id="container">
-  <ng-container *ngFor="let Product of Products">
+<div>
+  <app-carousel></app-carousel>
+  <h2>{{ "Home.Featured-Products" | translate }}</h2>
+  <div id="container">
+    <ng-container *ngFor="let Product of Products">
       <mat-card *ngIf="Product.featured === 'yes'">
-      <mat-card-header>
-        <mat-card-title>{{ Product.Name }}</mat-card-title>
-        <mat-card-subtitle>{{ Product.Brand }}</mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image src="{{ Product.Images[0] }}" alt="" />
-      <mat-card-content> </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="primary" routerLink="/detail/{{ Product.Name }}">
-          See More Details
-        </button>
-      </mat-card-actions>
-  </mat-card>
-  </ng-container>
+        <mat-card-header>
+          <mat-card-title>{{ Product.Name }}</mat-card-title>
+          <mat-card-subtitle>{{ Product.Brand }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{ Product.Images[0] }}" alt="" />
+        <mat-card-content> </mat-card-content>
+        <mat-card-actions>
+          <button
+            mat-raised-button
+            color="primary"
+            routerLink="/detail/{{ Product.Name }}"
+          >
+            See More Details
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </ng-container>
+  </div>
 </div>
