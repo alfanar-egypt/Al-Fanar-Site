@@ -1,52 +1,57 @@
-img {
-  height: 70px;
-  margin: 5%;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-#img-container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  width: 50%;
-}
-span,
-a {
-  font-family: "Cairo", sans-serif;
-  color: white;
-  margin: 5px;
-}
-button {
-  margin: 0, 5px;
-  font-family: "Cairo", sans-serif;
-}
-mat-toolbar {
+.menu {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   z-index: 10;
-  position: relative;
+}
+span {
+  display: none;
+  font-family: "Cairo", sans-serif;
+  color: white;
+}
+a {
+  font-size: small;
+  padding: 0 2.5%;
+  font-family: "Cairo", sans-serif;
+  color: white;
 }
 mat-toolbar-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+  padding: 0;
   width: 100%;
+}
+#toggle-container {
+  position: absolute;
+  right: 0;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  top: 100%;
 }
 #container {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
 }
-#toggle-container {
-  width: 60%;
+#img-container {
+  width: 30%;
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-end;
-  font-size: medium;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 10px;
+}
+img {
+  max-width: 120px;
 }
 fa-icon {
   color: #4caf50;
-  margin: 10px;
   display: block;
 }
 fa-icon:hover {
@@ -56,18 +61,31 @@ fa-icon:hover {
 #icons-container {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
   justify-content: flex-end;
-  width: 50%;
+  width: 65%;
   a {
     display: block;
+    margin: 2px;
   }
 }
-.menu {
-   margin: 0;
-   padding: 0;
-   width: 100%;
-   top: 0;
-   position: -webkit-sticky;
-   position: sticky;
+button {
+  font-family: "Cairo", sans-serif;
+}
+@media (min-width: 411px) {
+  #toggle-container {
+    position: initial;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 10px;
+    box-shadow: none;
+  }
+}
+@media (min-width: 768px) {
+  span {
+    display: inline;
+    margin: 10px;
+  }
 }
