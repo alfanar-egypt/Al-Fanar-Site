@@ -68,15 +68,15 @@ button {
 mat-button-toggle  {
   font-size: 8px;
 }
+#toggle-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+}
 @media (min-width: 375px) {
-  #toggle-container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: flex-end;
-    width: 100%;
-    box-shadow: none;
-  }
+
   a {
     font-size: small;
   }
