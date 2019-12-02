@@ -16,7 +16,16 @@ export class CarouselComponent implements OnInit {
     image: "../assets/images/4.jpg"
   }
   ];
+  x
   constructor(public translate: TranslateService) { }
   ngOnInit() {
+    this.changePorporation(window.screen.width)
+  }
+  changePorporation (width) {
+    if (width < 400) {
+      this.x = 50;
+    } else {
+      this.x = 25;
+    }
   }
 }
