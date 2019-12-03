@@ -18,7 +18,7 @@ span {
   color: white;
 }
 a {
-  font-size: 8px;
+  font-size: small;
   padding: 0 2%;
   font-family: "Cairo", sans-serif;
   color: white;
@@ -65,30 +65,25 @@ fa-icon:hover {
 button {
   font-family: "Cairo", sans-serif;
 }
-mat-button-toggle  {
-  font-size: 8px;
+mat-button-toggle {
+  font-size: small;
   background-color: #4caf50;
   color: white !important;
   border-color: #4caf50 !important;
 }
 mat-button-toggle-group {
   border-color: #4caf50;
-
 }
 #toggle-container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-end;
-  width: 100%;
+  display: none;
 }
 @media (min-width: 375px) {
-
-  a {
-    font-size: small;
-  }
-  mat-button-toggle  {
-    font-size: small;
+  #toggle-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
   }
 }
 @media (min-width: 768px) {
@@ -99,7 +94,7 @@ mat-button-toggle-group {
   a {
     font-size: medium;
   }
-  mat-button-toggle  {
+  mat-button-toggle {
     font-size: medium;
   }
 }
