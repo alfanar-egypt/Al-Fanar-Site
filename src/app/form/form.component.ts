@@ -72,11 +72,11 @@ export class FormComponent implements OnInit {
       }
     } else {
       if (document.getElementsByTagName("html")[0].getAttribute('lang') === "ar") {
-        this.message = "الرجاء ادخال الرقم الظاهر بشكل صحيح";
+        this.message = "الرجاء التحقق من ادخال الرقم المطلوب بشكل صحيح";
         this.openSnackBar(this.message, this.action);
       }
       else {
-        this.message = "Please enter the provided number correctly";
+        this.message = "please make sure that you have entered the provided number correctly";
         this.openSnackBar(this.message, this.action);
       }
     }
