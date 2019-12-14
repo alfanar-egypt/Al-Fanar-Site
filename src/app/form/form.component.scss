@@ -1,26 +1,24 @@
+* {
+  font-family: "Amiri", serif;
+}
 form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   margin: 1%;
-}
-mat-form-field {
-  width: 70%;
-  margin: 1%;
-  font-family: "Amiri", serif;
-}
-button {
-  font-size: large;
-  margin: 1%;
-  font-family: "Amiri", serif;
+  mat-form-field {
+    width: 70%;
+    margin: auto;
+  }
+  button {
+    font-size: large;
+    margin: 1% 1% 10% 1%;
+  }
 }
 div {
-  margin: 5%;
-  font-family: "Amiri", serif;
-}
-#last {
-  margin-bottom: 15%;
+  margin: 10%;
+  text-align: center;
 }
 @media (min-width: 411px) {
   div {
@@ -29,6 +27,6 @@ div {
 }
 @media (min-width: 768px) {
   mat-form-field {
-    width: 50%;
+    max-width: 600px;
   }
 }

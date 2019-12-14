@@ -3,6 +3,41 @@
   margin: 0;
   padding: 0;
 }
+#container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  #img-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 10px;
+  }
+  img {
+    max-width: 120px;
+  }
+  #icons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 65%;
+    a {
+      display: block;
+      margin: 2px;
+    }
+    fa-icon {
+      color: #4caf50;
+      display: block;
+    }
+    fa-icon:hover {
+      transform: scale(1.1);
+      transition: 0.5sec;
+    }
+  }
+}
 .menu {
   margin: 0;
   padding: 0;
@@ -11,11 +46,13 @@
   position: sticky;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   z-index: 10;
-}
-span {
-  display: none;
-  font-family: "Cairo", sans-serif;
-  color: white;
+  mat-toolbar-row {
+    padding: 0;
+    width: 100%;
+    button {
+      font-family: "Cairo", sans-serif;
+    }
+  }
 }
 a {
   font-size: small;
@@ -23,59 +60,22 @@ a {
   font-family: "Cairo", sans-serif;
   color: white;
 }
-mat-toolbar-row {
-  padding: 0;
-  width: 100%;
-}
-#container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-}
-#img-container {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin: 10px;
-}
-img {
-  max-width: 120px;
-}
-fa-icon {
-  color: #4caf50;
-  display: block;
-}
-fa-icon:hover {
-  transform: scale(1.1);
-  transition: 0.5sec;
-}
-#icons-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  width: 65%;
-  a {
-    display: block;
-    margin: 2px;
-  }
-}
-button {
+span {
+  display: none;
   font-family: "Cairo", sans-serif;
+  color: white;
+}
+#toggle-container {
+  display: none;
+  mat-button-toggle-group {
+    border-color: #4caf50;
+  }
 }
 mat-button-toggle {
   font-size: small;
   background-color: #4caf50;
   color: white !important;
   border-color: #4caf50 !important;
-}
-mat-button-toggle-group {
-  border-color: #4caf50;
-}
-#toggle-container {
-  display: none;
 }
 @media (min-width: 375px) {
   #toggle-container {

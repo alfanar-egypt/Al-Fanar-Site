@@ -5,19 +5,18 @@
   justify-content: center;
   margin: 20px;
   font-family: "Cairo", sans-serif;
+  .img-hover-zoom {
+    overflow: hidden;
+    width: 80%;
+    height: auto;
+  }
+  .img-hover-zoom img {
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 50px;
+  }
+  .img-hover-zoom:hover img {
+    transform: scale(1.1);
+  }
 }
-.img-hover-zoom {
-  overflow: hidden;
-  width: 80%;
-  height: auto;
-}
-.img-hover-zoom img {
-  transition: transform .5s ease;
-  width:100%;
-  height: 100%;
-  margin-bottom: 50px;
-}
-.img-hover-zoom:hover img {
-  transform: scale(1.1);
-}
-
