@@ -25,7 +25,7 @@ export class AppComponent {
     translate.use(browserLang.match(/en|ar/) ? browserLang : 'en');
     this.translate.onLangChange.subscribe(event => {
       this.lang = event.lang;
-      if (event.lang == 'ar') {
+      if (event.lang === 'ar') {
         this.ltrrtl = 'rtl';
       } else {
         this.ltrrtl = 'ltr';
