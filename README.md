@@ -6,6 +6,8 @@
 
 ### 🏠 [Homepage](fanarmedical.com)
 
+![David](https://img.shields.io/david/ahmed8157/Al-Fanar-Site) ![npm type definitions](https://img.shields.io/npm/types/typescript) ![Website](https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fwww.fanarmedical.com%2F)
+
 ## Install
 
 ```sh
