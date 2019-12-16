@@ -1,4 +1,4 @@
-<div>{{ "Home.Form-Message" | translate }}</div>
+<div data-aos="fade-in" data-aos-delay="50">{{ "Home.Form-Message" | translate }}</div>
 <form
   netlify
   method="POST"
@@ -6,6 +6,8 @@
   name="Contact-Form"
   [formGroup]="contactForm"
   (ngSubmit)="submitForm()"
+  data-aos="fade-in"
+  data-aos-delay="50"
 >
   <input type="hidden" name="form-name" value="Contact-Form" />
   <mat-form-field>

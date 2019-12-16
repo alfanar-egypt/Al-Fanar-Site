@@ -1,5 +1,5 @@
 <div id="container">
-  <mat-card *ngFor="let Product of Products">
+  <mat-card *ngFor="let Product of Products" data-aos="fade-in" data-aos-delay="50">
     <mat-card-header>
       <mat-card-title *ngIf="Product.featured == 'yes'"
         >{{ Product.Name }}<span> Featured</span></mat-card-title

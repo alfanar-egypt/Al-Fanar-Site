@@ -1,9 +1,15 @@
 <div>
   <app-carousel></app-carousel>
-  <h2>{{ "Home.Featured-Products" | translate }}</h2>
+  <h2 data-aos="fade-in" data-aos-delay="50">
+    {{ "Home.Featured-Products" | translate }}
+  </h2>
   <div id="container">
     <ng-container *ngFor="let Product of Products">
-      <mat-card *ngIf="Product.featured === 'yes'">
+      <mat-card
+        *ngIf="Product.featured === 'yes'"
+        data-aos="fade-in"
+        data-aos-delay="50"
+      >
         <mat-card-header>
           <mat-card-title>{{ Product.Name }}</mat-card-title>
           <mat-card-subtitle>{{ Product.Brand }}</mat-card-subtitle>

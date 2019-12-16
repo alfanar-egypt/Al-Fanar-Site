@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../products.service';
+import { Component, OnInit } from "@angular/core";
+import { ProductsService } from "../products.service";
+import AOS from "aos";
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  selector: "app-main",
+  templateUrl: "./main.component.html",
+  styleUrls: ["./main.component.scss"]
 })
 export class MainComponent implements OnInit {
-  Products
+  Products;
 
-  constructor(private productsService: ProductsService) { }
+  constructor(private productsService: ProductsService) {}
   getProducts(): void {
-    this.productsService.getProducts()
-      .subscribe(Products => this.Products = Products);
+    this.productsService
+      .getProducts()
+      .subscribe(Products => (this.Products = Products));
   }
 
   ngOnInit() {
-    this.getProducts()
+    this.getProducts();
+    AOS.init();
   }
 }
