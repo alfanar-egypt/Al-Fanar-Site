@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import {
   FormControl,
   FormGroupDirective,
@@ -7,11 +7,11 @@ import {
   FormGroup,
   ValidatorFn,
   AbstractControl
-} from "@angular/forms";
-import { ErrorStateMatcher } from "@angular/material/core";
-import { HttpClient, HttpParams } from "@angular/common/http";
-import { MatSnackBar } from "@angular/material/snack-bar";
-import AOS from "aos";
+} from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import AOS from 'aos';
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(
     control: FormControl | null,
@@ -26,30 +26,30 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   }
 }
 @Component({
-  selector: "app-form",
-  templateUrl: "./form.component.html",
-  styleUrls: ["./form.component.scss"]
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) {}
   message: string;
-  action: string = "X";
+  action = 'X';
   ranNum = Math.floor(Math.random() * 100 + 1);
   userInput: String;
-  emailFormControl = new FormControl("", [
+  emailFormControl = new FormControl('', [
     Validators.email,
     Validators.required
   ]);
-  nameFormControl = new FormControl("", [
+  nameFormControl = new FormControl('', [
     Validators.required,
-    Validators.pattern("[a-zA-Z\u0621-\u064A ]*$")
+    Validators.pattern('[a-zA-Z\u0621-\u064A ]*$')
   ]);
-  phoneNumberFormControl = new FormControl("", [
+  phoneNumberFormControl = new FormControl('', [
     Validators.required,
-    Validators.pattern("[0-9\u0660-\u0669]*$")
+    Validators.pattern('[0-9\u0660-\u0669]*$')
   ]);
-  commentsFormControl = new FormControl("", []);
-  verificationFormControl = new FormControl("", [
+  commentsFormControl = new FormControl('', []);
+  verificationFormControl = new FormControl('', [
     Validators.required,
     this.NumberValidator(this.userInput)
   ]);
@@ -58,7 +58,7 @@ export class FormComponent implements OnInit {
   contactForm = new FormGroup({
     Name: this.nameFormControl,
     Email: this.emailFormControl,
-    "Phone-Number": this.phoneNumberFormControl,
+    'Phone-Number': this.phoneNumberFormControl,
     Comments: this.commentsFormControl
   });
   submitForm() {
@@ -69,46 +69,46 @@ export class FormComponent implements OnInit {
         this.phoneNumberFormControl.errors === null
       ) {
         const body = new HttpParams()
-          .set("form-name", "Contact-Form")
-          .append("Name", this.contactForm.value.Name)
-          .append("Email", this.contactForm.value.Email)
-          .append("Phone-Number", this.contactForm.value["Phone-Number"])
-          .append("Comments", this.contactForm.value.Comments);
+          .set('form-name', 'Contact-Form')
+          .append('Name', this.contactForm.value.Name)
+          .append('Email', this.contactForm.value.Email)
+          .append('Phone-Number', this.contactForm.value['Phone-Number'])
+          .append('Comments', this.contactForm.value.Comments);
         this.http
-          .post("/", body.toString(), {
-            headers: { "Content-Type": "application/x-www-form-urlencoded" }
+          .post('/', body.toString(), {
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
           })
           .subscribe(res => {});
         if (
-          document.getElementsByTagName("html")[0].getAttribute("lang") === "ar"
+          document.getElementsByTagName('html')[0].getAttribute('lang') === 'ar'
         ) {
-          this.message = "لقد تم ارسال الاستمارة بنجاح";
+          this.message = 'لقد تم ارسال الاستمارة بنجاح';
           this.openSnackBar(this.message, this.action);
         } else {
-          this.message = "your form has been submitted successfully";
+          this.message = 'your form has been submitted successfully';
           this.openSnackBar(this.message, this.action);
         }
       } else {
         if (
-          document.getElementsByTagName("html")[0].getAttribute("lang") === "ar"
+          document.getElementsByTagName('html')[0].getAttribute('lang') === 'ar'
         ) {
-          this.message = "الرجاء التاكد من ملء الخانات المطلوبة بشكل صحيح";
+          this.message = 'الرجاء التاكد من ملء الخانات المطلوبة بشكل صحيح';
           this.openSnackBar(this.message, this.action);
         } else {
           this.message =
-            "please make sure that you have filled the required fields correctly";
+            'please make sure that you have filled the required fields correctly';
           this.openSnackBar(this.message, this.action);
         }
       }
     } else {
       if (
-        document.getElementsByTagName("html")[0].getAttribute("lang") === "ar"
+        document.getElementsByTagName('html')[0].getAttribute('lang') === 'ar'
       ) {
-        this.message = "الرجاء التحقق من ادخال الرقم المطلوب بشكل صحيح";
+        this.message = 'الرجاء التحقق من ادخال الرقم المطلوب بشكل صحيح';
         this.openSnackBar(this.message, this.action);
       } else {
         this.message =
-          "please make sure that you have entered the provided number correctly";
+          'please make sure that you have entered the provided number correctly';
         this.openSnackBar(this.message, this.action);
       }
     }

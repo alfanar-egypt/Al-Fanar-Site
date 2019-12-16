@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { ProductsService } from "../products.service";
-import AOS from "aos";
+import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../products.service';
+import AOS from 'aos';
 @Component({
-  selector: "app-main",
-  templateUrl: "./main.component.html",
-  styleUrls: ["./main.component.scss"]
+  selector: 'app-main',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
   Products;

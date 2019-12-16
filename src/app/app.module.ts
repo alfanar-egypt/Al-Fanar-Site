@@ -24,7 +24,7 @@ import { MainComponent } from './main/main.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './footer/footer.component';
 import { ProductsService } from './products.service';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
@@ -67,7 +67,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
   providers: [ProductsService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }

@@ -7,16 +7,17 @@ import AOS from 'aos';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  Products
+  Products;
 
-  constructor(private productsService: ProductsService) { }
+  constructor(private productsService: ProductsService) {}
   getProducts(): void {
-    this.productsService.getProducts()
-      .subscribe(Products => this.Products = Products);
+    this.productsService
+      .getProducts()
+      .subscribe(Products => (this.Products = Products));
   }
-  
+
   ngOnInit() {
-    this.getProducts()
+    this.getProducts();
     AOS.init();
   }
 }

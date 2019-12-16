@@ -1,4 +1,6 @@
-<div data-aos="fade-in" data-aos-delay="50">{{ "Home.Form-Message" | translate }}</div>
+<div data-aos="fade-in" data-aos-delay="50">
+  {{ 'Home.Form-Message' | translate }}
+</div>
 <form
   netlify
   method="POST"
@@ -20,11 +22,11 @@
       [errorStateMatcher]="matcher"
     />
     <mat-error *ngIf="nameFormControl.hasError('pattern')">
-      {{ "Home.Valid-Name" | translate }}
+      {{ 'Home.Valid-Name' | translate }}
     </mat-error>
     <mat-error *ngIf="phoneNumberFormControl.hasError('required')">
-      {{ "Home.Name-is" | translate }}
-      <strong>{{ "Home.Required" | translate }}</strong>
+      {{ 'Home.Name-is' | translate }}
+      <strong>{{ 'Home.Required' | translate }}</strong>
     </mat-error>
   </mat-form-field>
   <mat-form-field>
@@ -37,11 +39,11 @@
       [errorStateMatcher]="matcher"
     />
     <mat-error *ngIf="emailFormControl.hasError('email')">
-      {{ "Home.Valid-Email" | translate }}
+      {{ 'Home.Valid-Email' | translate }}
     </mat-error>
     <mat-error *ngIf="emailFormControl.hasError('required')">
-      {{ "Home.Email-is" | translate }}
-      <strong>{{ "Home.Required" | translate }}</strong>
+      {{ 'Home.Email-is' | translate }}
+      <strong>{{ 'Home.Required' | translate }}</strong>
     </mat-error>
   </mat-form-field>
   <mat-form-field>
@@ -54,11 +56,11 @@
       [errorStateMatcher]="matcher"
     />
     <mat-error *ngIf="phoneNumberFormControl.hasError('pattern')">
-      {{ "Home.Valid-Phone" | translate }}
+      {{ 'Home.Valid-Phone' | translate }}
     </mat-error>
     <mat-error *ngIf="phoneNumberFormControl.hasError('required')">
-      {{ "Home.Phone-Number-is" | translate }}
-      <strong>{{ "Home.Required" | translate }}</strong>
+      {{ 'Home.Phone-Number-is' | translate }}
+      <strong>{{ 'Home.Required' | translate }}</strong>
     </mat-error>
   </mat-form-field>
   <mat-form-field>
@@ -81,8 +83,8 @@
       [errorStateMatcher]="matcher"
     />
     <mat-error *ngIf="verificationFormControl.hasError('required')">
-      {{ "Home.Verification2" | translate }}
-      <strong>{{ "Home.Required" | translate }}</strong>
+      {{ 'Home.Verification2' | translate }}
+      <strong>{{ 'Home.Required' | translate }}</strong>
     </mat-error>
     <mat-error
       *ngIf="
@@ -90,7 +92,7 @@
         !verificationFormControl.hasError('required')
       "
     >
-      {{ "Home.Verification3" | translate }}
+      {{ 'Home.Verification3' | translate }}
     </mat-error>
   </mat-form-field>
   <button
@@ -100,6 +102,6 @@
     type="submit"
     id="last"
   >
-    {{ "Home.Submit" | translate }}
+    {{ 'Home.Submit' | translate }}
   </button>
 </form>

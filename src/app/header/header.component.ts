@@ -14,10 +14,9 @@ export class HeaderComponent implements OnInit {
   faLinkedin = faLinkedin;
   faEnvelopeSquare = faEnvelopeSquare;
   faPhoneSquare = faPhoneSquare;
-  constructor(public translate: TranslateService) { }
+  constructor(public translate: TranslateService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
   useLanguage(language: string) {
     this.translate.use(language);
   }

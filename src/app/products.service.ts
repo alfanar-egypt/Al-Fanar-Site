@@ -5,7 +5,7 @@ import { of, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductsService {
-  constructor() { }
+  constructor() {}
   getProducts() {
     return of(Products);
   }
